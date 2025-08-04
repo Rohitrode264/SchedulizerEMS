@@ -25,6 +25,7 @@ import SignUpx from './pages/SignUpx'
 import { instituteSignupType, instituteSigninType } from "@pratikndl/common-schedulizer-ems";
 import ElectiveClassFormTheory from './components/Schedule/ClassForms/ElectiveClassFormTheory'
 import ElectiveClassFormPractical from './components/Schedule/ClassForms/ElectiveClassFormPractical'
+import Timetable from './pages/timetable'
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
 					<Route path='/' element={<Home/>}/>
 					<Route path='/department' element={<Department/>}/>
 					<Route path='/faculty' element={<Faculty/>}/>
+					<Route path='timetable/:scheduleId/:studentGroupId' element={<Timetable/>}/>
 					<Route path='/course' element={<Course/>}>
 							<Route path='regular' element={<RegularCourse/>} />
 							<Route path='elective' element={<ElectiveBasket/>} />
@@ -52,6 +54,7 @@ function App() {
 							<Route path='faculty/:facultyId' element={<FacultyConstraint/>}/> 
             				<Route path='studentGroup' element={<ManageStudents/>}/>
 							<Route path='studentGroup/:studentGroupId' element={<StudentGroupMenu/>} >
+								
 								<Route path='regularTheory' element={<RegularTheoryClassForm/>} />
 								<Route path='regularPractical' element={<RegularPracticalClassForm/>} />
 								<Route path='programTheory' element={<ElectiveClassFormTheory />} />
